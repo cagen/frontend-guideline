@@ -1,4 +1,4 @@
-# 前端代码规范
+# Kaikeba前端代码规范
 
 版本：v0.1  
 开始时间：2014.11.24  
@@ -111,7 +111,7 @@ color: #e5e5e5;
 
 ----------
 
-## HTML样式规范
+## HTML代码规范
 
 ### 文档类型
 使用HTML5的文档类型`<!DOCTYPE html>`  
@@ -224,8 +224,184 @@ HTML5规范中样式表和脚本的`type`属性默认分别为`text/css`和`text
 
 ----------
 
-## HTML格式规范
+## HTML代码格式
 
 ### 通用格式
+对于所有的`block`、`list`、`table`元素，必须新起一行，并且缩进其子元素  
+> 元素样式的独立（因为CSS允许元素假定每种display属性对应不同角色），`block`、`list`、`table`元素全部需要新起一行。  
+> Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.  
+
+对于`block`、`list`、`table`的子节点，都需要缩进。  
+如果使用时碰到list的项之间出现空格的问题，可以折中地将所有`li`元素写在一行。代码检查会出现警告，而非错误。
+
+```html
+<!-- 推荐 -->
+<blockquote>
+  <p><em>Space</em>, the final frontier.</p>
+</blockquote>
+
+<!-- 推荐 -->
+<ul>
+  <li>Moe
+  <li>Larry
+  <li>Curly
+</ul>
+
+<!-- 推荐 -->
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Income
+      <th scope="col">Taxes
+  <tbody>
+    <tr>
+      <td>$ 5.00
+      <td>$ 4.50
+</table>
+```
 
 ### 引号使用
+属性值使用双引号  
+在HTML中的属性值使用双引号而非单引号
+
+```html
+<!-- 不推荐 -->
+<a class='maia-button maia-button-secondary'>Sign in</a>
+
+<!-- 推荐 -->
+<a class="maia-button maia-button-secondary">Sign in</a>
+```
+
+
+----------
+
+## CSS代码规范
+
+### CSS有效性
+使用有效的CSS代码。  
+除非遇到特定的兼容性语法，如前缀、IE兼容语法等。  
+使用[W3C CSS validator](http://jigsaw.w3.org/css-validator/)测试有效性  
+验证CSS有效性可以发现无用的CSS代码，并及时移除，保证正确的CSS使用。
+
+### ID和Class命名
+使用有意义或者通用的ID和Class命名。  
+ID和Class命名时最好能够表达出这一样式的目的，而不是使用表象的或者晦涩难懂的命名方式。  
+特定的或者能够表达出目的的命名容易理解而且不会轻易改变  
+通用的命名是为了那些没有特殊目的元素或者那些跟其相同的元素没有意义上差别的元素，他们就类似于Helper方法一样  
+使用通用的命名可以减少HTML代码改动的几率。  
+```css
+/* 不推荐: 无意义 */
+#yee-1901 {}
+
+/* 不推荐: 太过于表象 */
+.button-green {}
+.clear {}
+
+/* 推荐: 目的特定 */
+#gallery {}
+#login {}
+.video {}
+
+/* 推荐: 通用 */
+.aux {}
+.alt {}
+```
+
+### ID和Class命名规范
+命名在保证易懂的前提下尽量简短  
+在能够描述清楚这一ID或Class时，尽力保持简短  
+这样命名ID和Class能够让代码更加易懂并提升代码效率
+```css
+/* 不推荐 */
+#navigation {}
+.atr {}
+
+/* 推荐 */
+#nav {}
+.author {}
+```
+
+### 类型选择器
+避免使用类型选择器去限定ID和Class  
+除非有必要（例如使用Helper类时），不要将类型选择器与ID或Class同时使用  
+减少不必要的祖先选择器对于性能来说[有所帮助](http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/)。
+```css
+/* 不推荐 */
+ul#example {}
+div.error {}
+
+/* 推荐 */
+#example {}
+.error {}
+```
+
+### 属性简写 （待议）
+尽可能使用属性简写  
+CSS提供了的某些简写形式（如font），就算只是显式设定其中一个值，也要使用缩写形式。  
+使用简写形式可以提高代码效率和可读性。
+```css
+/* 不推荐 */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+
+/* 推荐 */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+```
+
+### 0和单位
+在属性值为0时，忽略单位，除非该单位是必须的。
+```css
+/* 推荐 */
+margin: 0;
+padding: 0;
+```
+
+### 0.前缀
+当属性值在-1与1之间时，忽略前置的`0.`
+```css
+/* 推荐 */
+font-size: .8em;
+```
+
+### 16进制
+尽量使用3位16进制数更加短小简洁
+```css
+/* 不推荐 */
+color: #eebbcc;
+
+/* 推荐 */
+color: #ebc;
+```
+
+### 前缀 （可选）
+带应用特定的前缀的选择器  
+在大型的项目中嵌入了其他项目的代码，或者引用了其他站点的样式时，使用简短而独特的标识符当作前缀（类似命名空间），后用`-`连接  
+使用这种方式可以避免命名冲突，并可以使维护更加方便，比如在查找和替换样式的时候
+
+
+### ID和Class分隔符
+在ID和Class中使用`-`作为词语的分隔符  
+不要使用下划线或者驼峰等形式作为ID和Class的分隔形式，需要保持这种习惯，以提高代码的可读性和一致性。
+```css
+/* 不推荐：未分割词语 */
+.demoimage {}
+
+/* 不推荐：下划线形式 */
+.error_status {}
+
+/* 推荐 */
+#video-id {}
+.ads-sample {}
+```
+
+### CSS Hacks
+避免使用UA检测和CSS Hack，优先尝试其他的解决方案  
+虽然使用UA检测或者特殊的CSS滤镜、Hack可以很方便地解决一些样式上的差异问题。但是为了编写和维护高效和可控的代码基础，这些方法只能作为最后的手段。从项目的长远来看，如果轻易地给这些方法开绿灯，就会使得项目更加倾向于使用更多的这些方法，最终会导致项目代码完全无法维护。
