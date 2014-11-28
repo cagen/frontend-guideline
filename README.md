@@ -6,7 +6,7 @@
 参考：  
 > [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)  
 > [Code Style](https://github.com/mdo/code-guide)  
-> [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
+> [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)  
 > [Douban Code Guideline](https://github.com/kejun/CSS-Code-Guideline)  
 
 ----------
