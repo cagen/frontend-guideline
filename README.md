@@ -1,11 +1,12 @@
 # 前端代码规范
 
 版本：v0.1  
-开始时间：2014.11.24  
-完稿时间：暂无  
+开始时间：2014.11.24 
+版本v0.1：2014.11.28  
 参考：  
 > [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)  
 > [Code Style](https://github.com/mdo/code-guide)  
+> [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 > [Douban Code Guideline](https://github.com/kejun/CSS-Code-Guideline)  
 
 ----------
@@ -405,3 +406,195 @@ color: #ebc;
 ### CSS Hacks
 避免使用UA检测和CSS Hack，优先尝试其他的解决方案  
 虽然使用UA检测或者特殊的CSS滤镜、Hack可以很方便地解决一些样式上的差异问题。但是为了编写和维护高效和可控的代码基础，这些方法只能作为最后的手段。从项目的长远来看，如果轻易地给这些方法开绿灯，就会使得项目更加倾向于使用更多的这些方法，最终会导致项目代码完全无法维护。
+
+
+----------
+
+## CSS代码格式规范
+
+### 属性声明顺序
+按类型声明  
+相关的属性声明应当归为一组，并按照下面的顺序排列：  
+1. Positioning
+2. Box model
+3. Typographic
+4. Visual
+由于定位（positioning）可以从正常的文档流中移除元素，并且还能覆盖盒模型（box model）相关的样式，因此排在首位。盒模型排在第二位，因为它决定了组件的尺寸和位置。  
+其他属性只是影响组件的内部（inside）或者是不影响前两组属性，因此排在后面。  
+完整的属性列表及其排列顺序请参考[Recess](https://github.com/twitter/recess/blob/master/lib/compile/strict-property-order.js)。
+
+```css
+/* 推荐 */
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
+```
+
+### 块级元素缩进
+所有块级元素要进行缩进，增加层级能提高代码的可读性。
+```css
+/* 推荐 */
+@media screen, projection {
+
+  html {
+    background: #fff;
+    color: #444;
+  }
+
+}
+```
+
+### 声明结尾
+每个属性声明都要加分号，即使最后一个声明也不要省略
+```css
+/* 不推荐 */
+.test {
+  display: block;
+  height: 100px
+}
+
+/* 推荐 */
+.test {
+  display: block;
+  height: 100px;
+}
+```
+
+### 属性名结尾
+属性名的冒号后需要加空格
+```css
+/* 不推荐 */
+h3 {
+  font-weight:bold;
+}
+
+/* 推荐 */
+h3 {
+  font-weight: bold;
+}
+```
+
+### 声明块格式
+在最后一个选择器和声明块的左侧花括号之间要有一个空格，且声明块左侧花括号必须和最后一个选择器同一行。
+```css
+/* 不推荐：没空格 */
+#video{
+  margin-top: 1em;
+}
+
+/* 不推荐：不在同一行 */
+#video
+{
+  margin-top: 1em;
+}
+
+/* 推荐 */
+#video {
+  margin-top: 1em;
+}
+```
+
+### 选择器和声明分隔
+每个选择器和声明都要新起一行
+```css
+/* 不推荐：没空格 */
+a:focus, a:active {
+  position: relative; top: 1px;
+}
+
+/* 推荐 */
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+```
+
+### 规则分隔
+在不同规则之间空一行
+```css
+/* 推荐 */
+html {
+  background: #fff;
+}
+
+body {
+  margin: auto;
+  width: 50%;
+}
+```
+
+### CSS冒号使用
+属性选择器和属性值都使用单引号，不要给URI值（`url()`）加上任何引号
+例外：如果你必须要使用`@charset`，可以使用双引号
+```css
+/* 不推荐 */
+@import url("//www.google.com/css/maia.css");
+
+html {
+  font-family: "open sans", arial, sans-serif;
+}
+
+
+/* 推荐 */
+@import url(//www.google.com/css/maia.css);
+
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+```
+
+----------
+
+## CSS Meta规范
+
+### 注释分块 (可选)
+如果可以，可以将一组样式使用注释分割开来。
+```css
+/* 推荐 */
+
+/* Header */
+
+#adw-header {}
+
+/* Footer */
+
+#adw-footer {}
+
+/* Gallery */
+
+.adw-gallery {}
+```
+
+## 写在最后
+
+**保持一致性！**  
+在你修改一段代码之前，花几分钟看看这些代码的基本格式。如果他们在所有的运算符前后都加了空格，那么你也应该加上。如果代码的评论是用一圈`#`号围起来的，那么你的评论也该这么做。   
+制定并施行代码规范的目的在于，能建立一种通用的代码“语法”，让人们能够专注于你的代码要表达什么，而不是怎么表达的。我们在这里制订了全局的样式规范，让人们能够了解这一“语法”，但如果你添加的代码与原有的代码差别很大，则要尽量注意保持与原有代码风格一致。
