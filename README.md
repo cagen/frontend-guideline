@@ -1,7 +1,7 @@
 # 前端代码规范
 
 版本：v0.1  
-开始时间：2014.11.24 
+开始时间：2014.11.24  
 版本v0.1：2014.11.28  
 参考：  
 > [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)  
