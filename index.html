@@ -1,67 +1,776 @@
-<!DOCTYPE html>
-<html lang="">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+<!doctype html>
+<html lang="zh-cn">
 
-		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
 
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<h1 class="text-center">Hello World</h1>
-		<div id="test" class="carousel slide" data-ride="carousel">
-		    <ol class="carousel-indicators">
-		        <li data-target="#test" data-slide-to="0" class=""></li>
-		        <li data-target="#test" data-slide-to="1" class=""></li>
-		        <li data-target="#test" data-slide-to="2" class="active"></li>
-		    </ol>
-		    <div class="carousel-inner">
-		        <div class="item">
-		            <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojN2E3YTdhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
-		            <div class="container">
-		                <div class="carousel-caption">
-		                    <h1>Example headline.</h1>
-		                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-		                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		            <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNmE2YTZhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==">
-		            <div class="container">
-		                <div class="carousel-caption">
-		                    <h1>Another example headline.</h1>
-		                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item active">
-		            <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNWE1YTVhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
-		            <div class="container">
-		                <div class="carousel-caption">
-		                    <h1>One more for good measure.</h1>
-		                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		    <a class="left carousel-control" href="#test" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-		    <a class="right carousel-control" href="#test" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-		</div>
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	</body>
+  <title>Frontend Guideline</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/theme/default.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+  <style>
+    .reveal h1 {
+      padding: 30px 0;
+    }
+    .reveal pre code {
+      max-height: initial;
+    }
+    .reveal ul {
+      margin-bottom: 10px;
+    }
+    .reveal li {
+      font-size: 60%;
+    }
+    .reveal p {
+      font-size: 60%;
+      line-height: 1.425;
+      margin-bottom: 10px;
+    }
+    .text-left {
+      text-align: left;
+    }
+    .reveal .index-list {
+      vertical-align: top;
+      padding: 30px;
+    }
+    .reveal .index-list > li {
+      padding: 6px 0;
+      font-size: 100%;
+    }
+    .reveal section > h2 {
+      padding: 20px;
+    }
+    .reveal .l-blk,
+    .reveal .r-blk {
+      float: left;
+      width: 46%;
+      padding: 30px 2%;
+    }
+    .reveal .final-words {
+      font-size: 110%;
+    }
+    .reveal .ref {
+      font-size: 200%;
+    }
+    .reveal .ref > li {
+      padding: 20px 0;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>前端规范</h1>
+        <h3>HTML/CSS部分（初稿）</h3>
+      </section>
+
+      <section>
+        <h2>写在前面</h2>
+        <h4>不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。</h4>
+      </section>
+
+      <section>
+        <h2>目录</h2>
+
+        <ul class="index-list">
+          <li>通用规范</li>
+          <li>通用代码格式</li>
+          <li>通用Meta格式</li>
+        </ul>
+
+        <ul class="index-list">
+          <li>HTML规范</li>
+          <li>HTML代码格式</li>
+        </ul>
+
+        <ul class="index-list">
+          <li>CSS规范</li>
+          <li>CSS代码格式</li>
+        </ul>
+
+      </section>
+
+
+      <section>
+        <section>
+          <h2>通用部分</h2>
+        </section>
+        <section>
+          <h2>通用规范</h2>
+          <div class="l-blk text-left">
+            <h5>嵌入资源忽略协议类型</h5>
+            <p>对于图片、媒体文件、样式文件、脚本的URL地址中忽略协议部分（https:, http:），除非该资源只能支持某一种协议类型。</p>
+            <p>原因：</p>
+            <ul>
+              <li>使URL地址可以根据当前页面的协议形式进行请求，避免出现https和http混合的内容。
+                <br> 例子： <a href="https://mail.163.com/" target="_blank">https://mail.163.com/</a> </li>
+              <li>减少文件大小</li>
+            </ul>
+          </div>
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;script src=&quot;http://www.exmaple.com/js/example.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Recommended --&gt;
+&lt;script src=&quot;//www.google.com/autotrack.js&quot;&gt;&lt;/script&gt;
+              </code></pre>
+            <pre><code data-trim contenteditable class="css">
+/* Recommended */
+.example {
+  background: url(http://www.google.com/images/example);
+}
+/* Not recommended */
+.example {
+  background: url(//www.google.com/images/example);
+}
+              </code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <h2>通用代码格式</h2>
+          <div class="l-blk text-left">
+            <h5>缩进</h5>
+            <p>使用空格缩进，一次缩进两个空格</p>
+            <p>不要使用tab或者混合使用tab和space进行缩进</p>
+            <br>
+            <h5>大小写</h5>
+            <p>所有的代码小写，包括：</p>
+            <div>
+              <ul>
+                <li>HTML元素名称、属性、属性值（text/CDATA除外）</li>
+                <li>CSS的选择器，属性，和属性值（字符串除外）</li>
+              </ul>
+            </div>
+            <br>
+            <h5>末尾空格</h5>
+            <p>去除行尾无用空格</p>
+            <p>行尾空格容易造成文件差异比较时的混乱</p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;A HREF=&quot;/&quot;&gt;Home&lt;/A&gt;
+
+&lt;!-- Recommended --&gt;
+&lt;img src=&quot;google.png&quot; alt=&quot;Google&quot;&gt;
+              </code></pre>
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended */
+color: #E5E5E5;
+
+/* Recommended */
+color: #e5e5e5;
+              </code></pre>
+          </div>
+        </section>
+
+
+
+        <section>
+          <h2>通用Meta规范</h2>
+          <div class="l-blk text-left">
+            <h5>编码</h5>
+            <p>使用UTF-8编码格式</p>
+            <div>
+              <ul>
+                <li>确保编辑器使用UTF-8编码格式，不要使用<a href="https://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F">BOM</a>（待议）</li>
+                <li>在HTML模板和文档中，通过&lt;meta charset=&quot;utf-8&quot;&gt;声明编码格式</li>
+                <li>不要特定样式表的编码格式，因为它默认为UTF-8</li>
+              </ul>
+            </div>
+            <p>更多关于编码格式及如何声明的问题，参见<a href="http://www.w3.org/International/tutorials/tutorial-char-enc/">Handling character encodings in HTML and CSS</a>
+            </p>
+            <br>
+            <h5>注释（可选）</h5>
+            <p>所有的代码小写，包括：</p>
+            <div>
+              <ul>
+                <li>HTML元素名称、属性、属性值（text/CDATA除外）</li>
+                <li>CSS的选择器，属性，和属性值（字符串除外）</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="r-blk">
+            <!-- <pre><code data-trim contenteditable class="html">
+  
+              </code></pre> -->
+          </div>
+        </section>
+      </section>
+
+
+      <section>
+        <section>
+          <h2>HTML部分</h2>
+        </section>
+
+        <section>
+          <h2>HTML规范</h2>
+          <div class="l-blk text-left">
+            <h5>HTML有效性</h5>
+            <p>验证HTML有效性，如标签闭合，重复ID，无效属性等问题</p>
+            <p>可以使用<a href="http://validator.w3.org/nu/">W3C HTML validator</a>来进行验证</p>
+            <br>
+            <h5>语义化</h5>
+            <p>
+              根据目的使用对应的HTML元素（常被错误的称呼为HTML标签
+              <br> 例如：标题使用标题元素，段落使用p元素，链接使用a元素等等
+            </p>
+            <br>
+            <h5>文档类型</h5>
+            <p>
+              使用HTML5的文档类型&lt;!DOCTYPE html&gt; （推荐使用HTML，对应的MIME类型为text/html。不推荐使用XHTML，对应的MIME类型为application/xhtml+xml，因为该类型缺少浏览器的支持，并且相较于HTML，会少了很多优化的空间） 并且对于HTML来说，不要关闭空元素，例如：使用&lt;br&gt;，而无需使用&lt;br /&gt;
+            </p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;title&gt;Test&lt;/title&gt;
+&lt;article&gt;This is only a test.
+
+&lt;!-- recommended --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Test&lt;/title&gt;
+&lt;article&gt;This is only a test.&lt;/article&gt;
+              </code></pre>
+            <br>
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;div onclick=&quot;goToRecommendations();&quot;&gt;All recommendations&lt;/div&gt;
+&lt;!-- Recommended --&gt;
+&lt;a href=&quot;recommendations/&quot;&gt;All recommendations&lt;/a&gt;
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML规范</h2>
+          <div class="l-blk text-left">
+            <h5>关注点分离</h5>
+            <p>
+              将结构（标记）、展示（样式）、行为（脚本）分离，并且尽量使这三者的交互减少到最小
+              <br> 保证文档和模板只包含HTML，并且HTML只作为页面结构的目的而使用，将所有的样式放入样式表，将所有的行为放入脚本中去
+              <br> 并且，在HTML模板中尽力减少外联样式和脚本的数量以保证三者的连接尽量简单
+              <br> 将样式和行为从结构中分离出来可提高代码的可维护性。因为修改HTML模板的代价远高于修改样式表和脚本。
+            </p>
+            <br>
+            <h5>多媒体兼容</h5>
+            <p>
+              对于图片、视频、canvas创建的动画对象等多媒体，提供替代的内容。
+              <br> 例如：对图片使用alt属性提供有意义的替代文字，对于视频音频，提供对应的字幕和标题。
+              <br> 例外：
+            </p>
+            <div>
+              <ul>
+                <li>如果图片在页面中已经有了其他的文字解释，引入alt的内容会带来冗余</li>
+                <li>该图片只是为了装饰性而使用，并且还无法使用CSS背景图片来替代</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;HTML sucks&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;base.css&quot; media=&quot;screen&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;grid.css&quot; media=&quot;screen&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;print.css&quot; media=&quot;print&quot;&gt;
+&lt;h1 style=&quot;font-size: 1em;&quot;&gt;HTML sucks&lt;/h1&gt;
+&lt;p&gt;I&rsquo;ve read about this on a few sites but now I&rsquo;m sure:
+  &lt;u&gt;HTML is stupid!!1&lt;/u&gt;
+&lt;center&gt;I doing everything&lt;/center&gt;
+
+&lt;!-- Recommended --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;My first CSS-only redesign&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;default.css&quot;&gt;
+&lt;h1&gt;My first CSS-only redesign&lt;/h1&gt;
+&lt;p&gt;I&rsquo;ve read
+&lt;p&gt;It&rsquo;s awesome!
+              </code></pre>
+            <br>
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;img src=&quot;spreadsheet.png&quot;&gt;
+&lt;!-- Recommended --&gt;
+&lt;img src=&quot;spreadsheet.png&quot; alt=&quot;Spreadsheet screenshot.&quot;&gt;
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML规范</h2>
+          <div class="l-blk text-left">
+            <h5>HTML字符实体引用</h5>
+            <p>
+              不要使用HTML字符实体引用
+              <br> 只要团队中使用的文件和编辑器都设置为UTF-8，则没有必要使用&amp;mdash;、&amp;rdquo;、&amp;#x263a;这样的实体引用
+              <br> 需要使用实体引用的情况有两种：
+            </p>
+            <div>
+              <ul>
+                <li>在HTML中有特殊意义的字符，比如&lt;、&amp;</li>
+                <li>控制符，或者空格</li>
+              </ul>
+            </div>
+            <br>
+            <h5>type属性</h5>
+            <p>
+              忽略样式表和脚本的type属性
+              <br> HTML5规范中样式表和脚本的type属性默认分别为text/css和text/javascript。
+              <br> 对于老的浏览器，这么做也是可以的。
+              <br> 当然，如果样式表使用的不是CSS或者脚本使用的不是Javascript，则需要显示声明type属性
+            </p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;img src=&quot;spreadsheet.png&quot;&gt;
+&lt;!-- Recommended --&gt;
+&lt;img src=&quot;spreadsheet.png&quot; alt=&quot;Spreadsheet screenshot.&quot;&gt;
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML代码格式</h2>
+          <div class="l-blk text-left">
+            <h5>通用格式</h5>
+            <p>
+              对于所有的block、list、table元素，必须新起一行，并且缩进其子元素
+              <br> 对于block、list、table的子节点，都需要缩进。
+              <br> 如果使用时碰到list的项之间出现空格的问题，可以折中地将所有li元素写在一行。代码检查会出现警告，而非错误。
+            </p>
+            <div>
+              <ul>
+                <li>在HTML中有特殊意义的字符，比如&lt;、&amp;</li>
+                <li>控制符，或者空格</li>
+              </ul>
+            </div>
+            <br>
+            <h5>引号使用</h5>
+            <p>属性值使用双引号</p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="html">
+&lt;!-- Not recommended --&gt;
+&lt;a class='maia-button maia-button-secondary'&gt;Sign in&lt;/a&gt;
+&lt;!-- Recommended --&gt;
+&lt;a class=&quot;maia-button maia-button-secondary&quot;&gt;Sign in&lt;/a&gt;
+              </code></pre>
+          </div>
+        </section>
+
+      </section>
+
+
+      <section>
+        <section>
+          <h2>CSS部分</h2>
+        </section>
+        <section>
+          <h2>CSS规范</h2>
+          <div class="l-blk text-left">
+            <h5>CSS有效性</h5>
+            <p>
+              使用有效的CSS代码。
+              <br> 除非遇到特定的兼容性语法，如前缀、IE兼容语法等。
+              <br> 使用
+              <a href="http://jigsaw.w3.org/css-validator/">W3C CSS validator</a>测试有效性
+              <br>
+            </p>
+            <br>
+            <h5>类型选择器</h5>
+            <p>
+              避免使用类型选择器去限定ID和Class
+              <br> 除非有必要（例如使用Helper类时），不要将类型选择器与ID或Class同时使
+              <br> 减少不必要的祖先选择器对于性能来说
+              <a href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/">有所帮助</a>。
+            </p>
+            <br>
+            <h5>CSS Hacks</h5>
+            <p>
+              避免使用UA检测和CSS Hack，优先尝试其他的解决方案
+              <br> 虽然使用UA检测或者特殊的CSS滤镜、Hack可以很方便地解决一些样式上的差异问题。但是为了编写和维护高效和可控的代码基础，这些方法只能作为最后的手段。
+              <br> 从项目的长远来看，如果轻易地给这些方法开绿灯，就会使得项目更加倾向于使用更多的这些方法，最终会导致项目代码完全无法维护。
+            </p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended */
+ul#example {}
+div.error {}
+/* Recommended */
+#example {}
+.error {}
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS规范</h2>
+          <div class="l-blk text-left">
+            <h5>ID和Class命名</h5>
+            <p>
+              使用有意义或者通用的ID和Class命名。
+              <br> ID和Class命名时最好能够表达出这一样式的目的，而不是使用表象的或者晦涩难懂的命名方式。
+              <br> 特定的或者能够表达出目的的命名容易理解而且不会轻易改变
+              <br> 通用的命名是为了那些没有特殊目的元素或者那些跟其相同的元素没有意义上差别的元素，他们就类似于Helper方法一样
+              <br> 使用通用的命名可以减少HTML代码改动的几率。
+              <br>
+              <br> 命名在保证易懂的前提下尽量简短
+              <br> 在能够描述清楚这一ID或Class时，尽力保持简短
+              <br> 这样命名ID和Class能够让代码更加易懂并提升代码效率
+            </p>
+            <br>
+            <h5>ID和Class分隔符</h5>
+            <p>
+              在ID和Class中使用-作为词语的分隔符
+              <br> 不要使用下划线或者驼峰等形式作为ID和Class的分隔形式，需要保持这种习惯，以提高代码的可读性和一致性。
+            </p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended: meaningless */
+#yee-1901 {}
+/* Not recommended: presentational */
+.button-green {}
+.clear {}
+/* Recommended: specific */
+#gallery {}
+#login {}
+.video {}
+/* Recommended: generic */
+.aux {}
+.alt {}
+/* Not recommended */
+#navigation {}
+.atr {}
+/* Recommended */
+#nav {}
+.author {}
+/* Not recommended: does not separate the words */
+.demoimage {}
+/* Not recommended: uses underscore instead of hyphen */
+.error_status {}
+/* Recommended */
+#video-id {}
+.ads-sample {}
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS规范</h2>
+          <div class="l-blk text-left">
+            <h5>属性简写 （待议）</h5>
+            <p>
+              尽可能使用属性简写
+              <br> CSS提供了的某些简写形式（如font），就算只是显式设定其中一个值，也要使用缩写形式。
+              <br> 使用简写形式可以提高代码效率和可读性。
+            </p>
+            <br>
+            <h5>关于0精简</h5>
+            <p>
+              在属性值为0时，忽略单位，除非该单位是必须的。
+              <br> 当属性值在-1与1之间时，忽略前置的0
+            </p>
+            <br>
+            <h5>16进制精简</h5>
+            <p>尽量使用3位16进制数更加短小简洁</p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+/* Recommended */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+              </code></pre>
+            <br>
+            <pre><code data-trim contenteditable class="css">
+/* Recommended */
+margin: 0;
+padding: 0;
+
+font-size: .8em;
+              </code></pre>
+            <br>
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended */
+color: #eebbcc;
+/* Recommended */
+color: #ebc;
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS代码格式</h2>
+          <div class="l-blk text-left">
+            <h5>属性声明顺序</h5>
+            <p>
+              按类型声明
+              <br> 相关的属性声明应当归为一组，并按照下面的顺序排列：
+            </p>
+            <ul>
+              <li>Positioning</li>
+              <li>Box model</li>
+              <li>Typographic</li>
+              <li>Visual</li>
+            </ul>
+            <p>
+              由于定位（positioning）可以从正常的文档流中移除元素，并且还能覆盖盒模型（box model）相关的样式，因此排在首位。盒模型排在第二位，因为它决定了组件的尺寸和位置。 其他属性只是影响组件的内部（inside）或者是不影响前两组属性，因此排在后面。 完整的属性列表及其排列顺序请参考
+              <a href="https://github.com/twitter/recess/blob/master/lib/compile/strict-property-order.js">Recess</a>。
+            </p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS代码格式</h2>
+          <div class="l-blk text-left">
+            <h5>CSS样式声明格式</h5>
+            <div>
+              <ul>
+                <li>所有块级元素要进行缩进，增加层级能提高代码的可读性。</li>
+                <li>属性名的冒号后需要加空格</li>
+                <li>每个属性声明都要加分号，即使最后一个声明也不要省略</li>
+                <li>在最后一个选择器和声明块的左侧花括号之间要有一个空格，且声明块左侧花括号必须和最后一个选择器同一行。</li>
+                <li>每个选择器和声明都要新起一行</li>
+                <li>在不同规则之间空一行</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+a:focus,
+a:active {
+  position: relative;
+  top: 1px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+              </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>CSS代码格式</h2>
+          <div class="l-blk text-left">
+            <h5>CSS冒号使用</h5>
+            <p>属性选择器和属性值都使用单引号，不要给URI值（url()）加上任何引号 例外：如果你必须要使用@charset，可以使用双引号</p>
+          </div>
+
+          <div class="r-blk">
+            <pre><code data-trim contenteditable class="css">
+/* Not recommended */
+@import url("//www.google.com/css/maia.css");
+
+html {
+  font-family: "open sans", arial, sans-serif;
+}
+/* Recommended */
+@import url(//www.google.com/css/maia.css);
+
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+              </code></pre>
+          </div>
+        </section>
+      </section>
+
+
+      <section>
+        <section>
+          <h2>写在最后</h2>
+        </section>
+        <section>
+          <h2>保持一致性！</h2>
+          <p class="final-words">
+            在你修改一段代码之前，花几分钟看看这些代码的基本格式。
+            <br> 如果他们在所有的运算符前后都加了空格，那么你也应该加上。
+            <br> 如果代码的评论是用一圈#号围起来的，那么你的评论也该这么做。
+            <br> 制定并施行代码规范的目的在于，能建立一种通用的代码“语法”，
+            <br> 让人们能够专注于你的代码要表达什么，而不是怎么表达的。
+            <br> 我们在这里制订了全局的样式规范，让人们能够了解这一“语法”，
+            <br> 但如果你添加的代码与原有的代码差别很大，则要尽量注意保持与原有代码风格一致。
+            <p>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>参考文档</h2>
+        <ul class="ref">
+          <li><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">Google HTML/CSS Style Guide</a>
+          </li>
+          <li><a href="https://github.com/mdo/code-guide">Code Style</a>
+          </li>
+          <li><a href="https://github.com/necolas/idiomatic-css">Principles of writing consistent, idiomatic CSS</a>
+          </li>
+          <li><a href="https://github.com/kejun/CSS-Code-Guideline">Douban Code Guideline</a>
+          </li>
+          <li><a href="https://github.com/forio/front-end-code-standards">Forio Front-End Style Guide</a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js"></script>
+
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      width: 1600,
+      height: 768,
+
+      // Enable the slide overview mode
+      overview: true,
+
+      // Opens links in an iframe preview overlay
+      previewLinks: false,
+
+      // Transition style
+      transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Transition speed
+      transitionSpeed: 'default', // default/fast/slow
+
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+      // Number of slides away from the current that are visible
+      viewDistance: 3,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [{
+        src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, ]
+    });
+  </script>
+
+</body>
+
 </html>
